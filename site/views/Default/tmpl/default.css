@@ -1,0 +1,64 @@
+/* 
+    Document   : default
+    Created on : Dec 28, 2012, 11:49:24 AM
+    Author     : p1nga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+table#fb_lite_container{ width:100%; border: 0; }
+table#fb_lite_container tr, table#fb_lite_container td{ border: 0; }
+table#fb_lite_container td{
+    text-align:center;
+    padding-bottom: 10px;
+    width:25%;
+    height:125px;
+    vertical-align: top;
+}
+table#fb_lite_container div.fbL_album_thumb{
+    margin:auto;
+    width:160px;
+    height:95px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border:1px solid #999;
+    border-radius: 2px;
+}
+table#fb_lite_container div.fbL_album_thumb:hover{
+    border:1px solid #444;
+    cursor:pointer;
+}
+
+#fb_lite_container div.album_title{
+    padding-top: 3px;
+    font-size: 10px;
+    font-family: verdana;
+    cursor:pointer;
+}
+
+#fb_lite_container div.album_title a:hover{
+    text-decoration: none !important;
+}
+#fb_lite_container div.album_title:hover{
+    text-decoration: none !important;
+}
+#fb_lite_container a:hover{
+    text-decoration: none;
+}
+
+
+#fb_album_nav {
+    text-align:center; margin:auto;
+}
+
+#fb_album_nav > a {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #555555;
+    color: #333333;
+    margin-right: 3px;
+    padding: 3px;
+    text-decoration: none;
+}
+#fb_album_nav > a:hover {
+    background-color: #666 !important;
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_FANPAGEALBUMS_FORM_LBL_PHOTOLINKS_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="pid" type="text"
+                
+            label="COM_FANPAGEALBUMS_FORM_LBL_PHOTOLINKS_PID"
+            description="COM_FANPAGEALBUMS_FORM_DESC_PHOTOLINKS_PID" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="album_name" type="text"
+                
+            label="COM_FANPAGEALBUMS_FORM_LBL_PHOTOLINKS_ALBUM_NAME"
+            description="COM_FANPAGEALBUMS_FORM_DESC_PHOTOLINKS_ALBUM_NAME" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="src_small" type="text"
+                
+            label="COM_FANPAGEALBUMS_FORM_LBL_PHOTOLINKS_SRC_SMALL"
+            description="COM_FANPAGEALBUMS_FORM_DESC_PHOTOLINKS_SRC_SMALL" 
+                
+                
+                
+            filter="raw" /> 
+
+       <field name="src_large" type="text"
+                
+            label="COM_FANPAGEALBUMS_FORM_LBL_PHOTOLINKS_SRC_LARGE"
+            description="COM_FANPAGEALBUMS_FORM_DESC_PHOTOLINKS_SRC_LARGE" 
+                
+                
+                
+            filter="raw" />
+
+	</fieldset>
+
+</form>
