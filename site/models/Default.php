@@ -86,7 +86,7 @@ class FanpageAlbumsModelDefault extends JModelItem
 	
 	//Select All pid In Table
 	$dbQuery->select('pid');
-            $dbQuery->from('#__fanpageAlbums_');
+            $dbQuery->from('#__fanpagealbums');
             $dbo->setQuery($dbQuery);
 
             //$existing contains the pid of exis
@@ -103,7 +103,7 @@ class FanpageAlbumsModelDefault extends JModelItem
 
                 //Select All pid In Table
                 $dbQuery->select('src_small');
-                $dbQuery->from('#__fanpageAlbums_');
+                $dbQuery->from('#__fanpagealbums');
                 $dbQuery->where('pid = "' . $Album['cover_pid'] . '"');
                 $dbo->setQuery($dbQuery);
                 
@@ -122,7 +122,7 @@ class FanpageAlbumsModelDefault extends JModelItem
                 $src_small = $insert->src_small;
                 try {
                         // Insert the object into the user profile table.
-                        $result = JFactory::getDbo()->insertObject('#__fbgallerylite_', $insert);
+                        $result = JFactory::getDbo()->insertObject('#__fanpagealbums', $insert);
                         unset($result);
                 }catch (Exception $e) {
                         return $e;
