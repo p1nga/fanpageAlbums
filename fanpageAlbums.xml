@@ -7,7 +7,7 @@
     <author>Part-One</author>
     <authorEmail>pastor399@gmail.com</authorEmail>
     <authorUrl>http://www.part-one.net</authorUrl>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <description>Display photo albums from a facebook fanpage.  Multiple views and options.</description>
     
     <install> <!-- Runs on install -->
@@ -28,6 +28,7 @@
         <filename>router.php</filename>
         <folder>views</folder>
         <folder>models</folder>
+        <folder>FacebookSDK</folder>
         <folder>controllers</folder>
         <folder>helpers</folder>
     </files>

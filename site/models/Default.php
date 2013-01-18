@@ -19,36 +19,40 @@ class FanpageAlbumsModelDefault extends JModelItem
     {
         $app = JFactory::getApplication();
         $params = $app->getParams();
-            $param = new stdClass();
-            $param->Columns = $params->get('columns');
-            $param->Rows = $params->get('rows');
-        return $param;
+        $param = new stdClass();
+        $param->PageID = $params->get('pageid');
+        $param->Type = $params->get('libType');
+        $param->Columns = $params->get('columns');
+        $param->Rows = $params->get('rows');
+        $param->AppId = $params->get('appId');
+        $param->AppSecret = $params->get('appSecret');
+        $this->DisplayParams = $param;
+        return $this->DisplayParams;
     }
     
     public function getAlbumList()
     {
         //READ VIEW PARAMETERS
-        $app = JFactory::getApplication();
-            $params = $app->getParams();
-            $libType = $params->get('libType');
-            $pageID = $params->get('pageid');
+        $pageID = $this->DisplayParams->PageID;
 
-        if ($libType == 0)  //Utilize JFBConnect Library
+        if ($this->DisplayParams->Type == 0)  //Utilize JFBConnect Library
         {
-            $jfbcLibrary = JFBConnectFacebookLibrary::getInstance();
-            $query = "SELECT aid, name, cover_pid FROM album WHERE owner = " . $pageID . " AND type = 'normal' AND name != 'Cover Photos' AND name != 'Profile Pictures'";
-
-            //Run Query
-            $results = $jfbcLibrary->api( array(
-                                     'method' => 'fql.query',
-                                     'query' => $query,
-                             ));
-             $this->AlbumList = $results;
+            $facebook = JFBConnectFacebookLibrary::getInstance();
+        }else{
+            require_once('components/com_fanpagealbums/FacebookSDK/facebook.php');
+            $config = array();
+            $config['appId'] = $this->DisplayParams->AppId;
+            $config['secret'] = $this->DisplayParams->AppSecret;
+            $config['fileUpload'] = false; // optional
+            $facebook = new Facebook($config);            
         }
-        else
-        {
-            echo 'Facebook SDK Not Implemented Yet';
-        }
+        
+        $query = "SELECT aid, name, cover_pid FROM album WHERE owner = " . $pageID .
+                 " AND type = 'normal' AND name != 'Cover Photos' AND name != 'Profile Pictures'";
+        $results = $facebook->api( array(
+                                 'method' => 'fql.query',
+                                 'query' => $query, ));
+        $this->AlbumList = $results;
         return $this->AlbumList;
     }
     

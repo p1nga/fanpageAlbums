@@ -2,13 +2,14 @@
 //NO DIRECT ACCESS ALLOWED
 defined('_JEXEC') or die;
 
+//print_r ($this->DisplayParams);
 
 $Albums = $this->AlbumList;     //List Of Albums And There Details
 $columns = $this->DisplayParams->Columns;       //Display Parameters - Table Columns
 $rows = $this->DisplayParams->Rows;     //Display Parameters - Table Rows
 
 $page = JRequest::getVar('page', 1);        //Which Page To Display?
-$show = JRequest::getVar('show', false);        //Show All Albums On Page?
+$show = JRequest::getVar('show', false);    //Show All Albums On Page?
 
 if($page < 1)       
     $page = 1;
@@ -52,7 +53,7 @@ $count = 0;
                 if ($colEnd == $columns){
                     echo('</tr><tr>'); $colEnd = 0;}  
                 echo('<td>');
-                $onClick = 'openbox("' . $Thumb->name . '")';
+                //$onClick = 'openbox("' . $Thumb->name . '")';
                 echo("<a href='?option=com_fanpageAlbums&view=Album&aid=" . $Thumb->aid . "'><div class='fbL_album_thumb' style='background-image: url(" .
                                                          $src_small. ")'> </div></a>");
                 echo("<a href='?option=com_fanpageAlbums&view=Album&aid=" . $Thumb->aid . "'><div class='album_title'>". $Thumb->name . "</div></a>");
