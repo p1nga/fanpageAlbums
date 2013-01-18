@@ -19,13 +19,16 @@ class FanpageAlbumsModelDefault extends JModelItem
     public function getDisplayParams()
     {
         $app = JFactory::getApplication();
+        
+        $comParams = JComponentHelper::getParams('com_fanpageAlbums');
         $params = $app->getParams();
+        
         $param = new stdClass();
         $param->PageID = $params->get('pageid');
-        $param->Type = $params->get('libType');
         $param->Columns = $params->get('columns');
         $param->Rows = $params->get('rows');
-        $param->AppId = $params->get('appId');
+        $param->Type = $comParams->get('libType');
+        $param->AppId = $comParams->get('appId');
         $param->AppSecret = $params->get('appSecret');
         $this->DisplayParams = $param;
             //Setup Which Facebook API To Use. 
@@ -124,7 +127,7 @@ class FanpageAlbumsModelDefault extends JModelItem
                 $insert->src_large=$photo[0]['images'][0]['source'];
                 $src_small = $insert->src_small;
                 try {
-                        // Insert the object into the user profile table.
+                        // Insert the object into fanpageAlbums table.
                         $result = JFactory::getDbo()->insertObject('#__fanpagealbums', $insert);
                         unset($result);
                 }catch (Exception $e) {

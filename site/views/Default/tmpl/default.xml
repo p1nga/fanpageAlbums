@@ -6,19 +6,12 @@
                 </message>
         </layout>
         <fields name="params">
-            <fieldset name="request">
-                <field name="libType" type="radio" default="0" label="Which Facebook Library?" description="">
-                    <option value="0">JFBConnect</option>
-                    <option value="1">Facebook Official</option>
-                </field>
-                <field name="pageid" type="text" default="" size="18" label="Page ID" description="Facebook Page ID" />
-                <field type="spacer" name="myspacer" label="&lt;hr/&gt;Official SDK Parameters" />
-                <field name="appId" type="text" default="" size="18" label="App Id" description="Facebook Application ID, From developers.facebook.com"/>
-                <field name="appSecret" type="text" default="" size="35" label="App Secret" description="Facebook Application Secret, From developers.facebook.com" />
-            </fieldset>
             <fieldset name="Display" label="Display Options">
                 <field name="columns" type="text" default="4" size="5" label="Columns" description="Number Of Columns To Display"/>
                 <field name="rows" type="text" default="5" size="5" label="Rows" description="Number Of Rows To Display" />
             </fieldset>
+            <fieldset name="request">
+            </fieldset>
+
         </fields>
 </metadata>

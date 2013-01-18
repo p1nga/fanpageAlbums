@@ -5,15 +5,28 @@
 		description="COM_FANPAGEALBUMS_COMPONENT_DESC"
 	>
 
-        <field name="test"
+        <field name="libType"
              type="radio"
              default="1"
-             label="COM_FANPAGEALBUMS_TEST_LABEL"
-             description="COM_FANPAGEALBUMS_TEST_DESC">
-                 <option value="0">JHIDE</option>
-                 <option value="1">JSHOW</option>
+             label="COM_FANPAGEALBUMS_APITYPE"
+             description="COM_FANPAGEALBUMS_APITYPE_DESC">
+                 <option value="0">JFBConnect</option>
+                 <option value="1">Facebook PHP SDK</option>
          </field>
-
+        <field name="appId"
+             type="text"
+             default=""
+             size="25"
+             label="COM_FANPAGEALBUMS_APPID"
+             description="COM_FANPAGEALBUMS_APPID_DESC">
+         </field>
+         <field name="appSecret"
+             type="text"
+             default=""
+             size="25"
+             label="COM_FANPAGEALBUMS_APPSECRET"
+             description="COM_FANPAGEALBUMS_APPSECRET_DESC">
+         </field>
 	</fieldset>
 
 	<fieldset name="permissions"
