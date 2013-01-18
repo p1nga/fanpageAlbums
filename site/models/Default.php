@@ -14,6 +14,7 @@ class FanpageAlbumsModelDefault extends JModelItem
     protected $AlbumList;
     protected $ThumbsList = array();
     protected $DisplayParams;
+    protected $fbAPI;
     
     public function getDisplayParams()
     {
@@ -27,6 +28,17 @@ class FanpageAlbumsModelDefault extends JModelItem
         $param->AppId = $params->get('appId');
         $param->AppSecret = $params->get('appSecret');
         $this->DisplayParams = $param;
+            //Setup Which Facebook API To Use. 
+            if ($this->DisplayParams->Type == 0){
+                $this->fbAPI = JFBConnectFacebookLibrary::getInstance();
+            }else{
+                require_once('components/com_fanpagealbums/FacebookSDK/facebook.php');
+                $config = array();
+                $config['appId'] = $this->DisplayParams->AppId;
+                $config['secret'] = $this->DisplayParams->AppSecret;
+                $config['fileUpload'] = false; // optional
+                $this->fbAPI = new Facebook($config);            
+            }
         return $this->DisplayParams;
     }
     
@@ -35,21 +47,9 @@ class FanpageAlbumsModelDefault extends JModelItem
         //READ VIEW PARAMETERS
         $pageID = $this->DisplayParams->PageID;
 
-        if ($this->DisplayParams->Type == 0)  //Utilize JFBConnect Library
-        {
-            $facebook = JFBConnectFacebookLibrary::getInstance();
-        }else{
-            require_once('components/com_fanpagealbums/FacebookSDK/facebook.php');
-            $config = array();
-            $config['appId'] = $this->DisplayParams->AppId;
-            $config['secret'] = $this->DisplayParams->AppSecret;
-            $config['fileUpload'] = false; // optional
-            $facebook = new Facebook($config);            
-        }
-        
         $query = "SELECT aid, name, cover_pid FROM album WHERE owner = " . $pageID .
                  " AND type = 'normal' AND name != 'Cover Photos' AND name != 'Profile Pictures'";
-        $results = $facebook->api( array(
+        $results = $this->fbAPI->api( array(
                                  'method' => 'fql.query',
                                  'query' => $query, ));
         $this->AlbumList = $results;
@@ -76,11 +76,10 @@ class FanpageAlbumsModelDefault extends JModelItem
         
         function fqlPhoto($cover)
         {
-            $jfbcLibrary = JFBConnectFacebookLibrary::getInstance();
-            $thumb_query = 'SELECT images FROM photo WHERE pid = "' . $cover . '"';
-            $thumb = $jfbcLibrary->api( array(
+            $query = 'SELECT images FROM photo WHERE pid = "' . $cover . '"';
+            $thumb = $this->fbAPI->api( array(
                                     'method' => 'fql.query',
-                                    'query' => $thumb_query,
+                                    'query' => $query,
                             ));
             return $thumb;
         }
