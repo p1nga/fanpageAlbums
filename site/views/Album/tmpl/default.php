@@ -8,6 +8,7 @@ Shadowbox.init();
 </script>
 
 <?php
+
 echo('<table id="fb_album" style="width:100%">');
 echo('<tr class="fb_album_row">');
 $count = 0;

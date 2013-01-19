@@ -24,6 +24,7 @@ class FANPAGEALBUMSViewAlbum extends JView
                 $model->setAlbumID(JRequest::getVar('aid'));
 
             // Get Data Back From The Model
+                $this->DisplayParams = $this->get('DisplayParams');
                 $this->AlbumID = $this->get('AlbumID');
                 $this->AlbumName = $this->get('AlbumName');
                 $this->PhotoList = $this->get('PhotoList');

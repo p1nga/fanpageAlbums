@@ -5,9 +5,6 @@ defined('_JEXEC') or die('Restricted access');
 // import Joomla modelitem library
 jimport('joomla.application.component.modelitem');
  
-/**
- * HelloWorld Model
- */
 class FanpageAlbumsModelDefault extends JModelItem
 {
 
@@ -29,7 +26,7 @@ class FanpageAlbumsModelDefault extends JModelItem
         $param->Rows = $params->get('rows');
         $param->Type = $comParams->get('libType');
         $param->AppId = $comParams->get('appId');
-        $param->AppSecret = $params->get('appSecret');
+        $param->AppSecret = $comParams->get('appSecret');
         $this->DisplayParams = $param;
             //Setup Which Facebook API To Use. 
             if ($this->DisplayParams->Type == 0){
