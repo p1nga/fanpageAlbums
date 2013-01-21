@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.8
- * @package     com_fanpageAlbums
+ * @package     com_fanpagealbums
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
  * @author      Part-One <pastor399@gmail.com> - http://www.part-one.net
@@ -36,9 +36,9 @@ function FanpageAlbumsBuildRoute(&$query)
  *
  * Formats:
  *
- * index.php?/fanpageAlbums/task/id/Itemid
+ * index.php?/fanpagealbums/task/id/Itemid
  *
- * index.php?/fanpageAlbums/id/Itemid
+ * index.php?/fanpagealbums/id/Itemid
  */
 function FanpageAlbumsParseRoute($segments)
 {

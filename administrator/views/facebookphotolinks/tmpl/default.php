@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.8
- * @package     com_fanpageAlbums
+ * @package     com_fanpagealbums
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
  * @author      Part-One <pastor399@gmail.com> - http://www.part-one.net
@@ -15,17 +15,17 @@ JHtml::_('behavior.tooltip');
 JHTML::_('script','system/multiselect.js',false,true);
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_fanpageAlbums/assets/css/fanpageAlbums.css');
+$document->addStyleSheet('components/com_fanpagealbums/assets/css/fanpagealbums.css');
 
 $user	= JFactory::getUser();
 $userId	= $user->get('id');
 $listOrder	= $this->state->get('list.ordering');
 $listDirn	= $this->state->get('list.direction');
-$canOrder	= $user->authorise('core.edit.state', 'com_fanpageAlbums');
+$canOrder	= $user->authorise('core.edit.state', 'com_fanpagealbums');
 $saveOrder	= $listOrder == 'a.ordering';
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_fanpageAlbums&view=facebookphotolinks'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_fanpagealbums&view=facebookphotolinks'); ?>" method="post" name="adminForm" id="adminForm">
 	<fieldset id="filter-bar">
 		<div class="filter-search fltlft">
 			<label class="filter-search-lbl" for="filter_search"><?php echo JText::_('JSEARCH_FILTER_LABEL'); ?></label>
@@ -84,10 +84,10 @@ $saveOrder	= $listOrder == 'a.ordering';
 		<tbody>
 		<?php foreach ($this->items as $i => $item) :
 			$ordering	= ($listOrder == 'a.ordering');
-			$canCreate	= $user->authorise('core.create',		'com_fanpageAlbums');
-			$canEdit	= $user->authorise('core.edit',			'com_fanpageAlbums');
-			$canCheckin	= $user->authorise('core.manage',		'com_fanpageAlbums');
-			$canChange	= $user->authorise('core.edit.state',	'com_fanpageAlbums');
+			$canCreate	= $user->authorise('core.create',		'com_fanpagealbums');
+			$canEdit	= $user->authorise('core.edit',			'com_fanpagealbums');
+			$canCheckin	= $user->authorise('core.manage',		'com_fanpagealbums');
+			$canChange	= $user->authorise('core.edit.state',	'com_fanpagealbums');
 			?>
 			<tr class="row<?php echo $i % 2; ?>">
 				<td class="center">
@@ -99,7 +99,7 @@ $saveOrder	= $listOrder == 'a.ordering';
 					<?php echo JHtml::_('jgrid.checkedout', $i, $item->editor, $item->checked_out_time, 'facebookphotolinks.', $canCheckin); ?>
 				<?php endif; ?>
 				<?php if ($canEdit) : ?>
-					<a href="<?php echo JRoute::_('index.php?option=com_fanpageAlbums&task=photolinks.edit&id='.(int) $item->id); ?>">
+					<a href="<?php echo JRoute::_('index.php?option=com_fanpagealbums&task=photolinks.edit&id='.(int) $item->id); ?>">
 					<?php echo $this->escape($item->pid); ?></a>
 				<?php else : ?>
 					<?php echo $this->escape($item->pid); ?>

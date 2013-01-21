@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.8
- * @package     com_fanpageAlbums
+ * @package     com_fanpagealbums
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
  * @author      Part-One <pastor399@gmail.com> - http://www.part-one.net
@@ -52,7 +52,7 @@ class FanpageAlbumsModelphotolinks extends JModelAdmin
 		$app	= JFactory::getApplication();
 
 		// Get the form.
-		$form = $this->loadForm('com_fanpageAlbums.photolinks', 'photolinks', array('control' => 'jform', 'load_data' => $loadData));
+		$form = $this->loadForm('com_fanpagealbums.photolinks', 'photolinks', array('control' => 'jform', 'load_data' => $loadData));
 		if (empty($form)) {
 			return false;
 		}
@@ -69,7 +69,7 @@ class FanpageAlbumsModelphotolinks extends JModelAdmin
 	protected function loadFormData()
 	{
 		// Check the session for previously entered form data.
-		$data = JFactory::getApplication()->getUserState('com_fanpageAlbums.edit.photolinks.data', array());
+		$data = JFactory::getApplication()->getUserState('com_fanpagealbums.edit.photolinks.data', array());
 
 		if (empty($data)) {
 			$data = $this->getItem();

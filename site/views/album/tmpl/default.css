@@ -1,0 +1,27 @@
+/* 
+    Document   : default
+    Created on : Dec 28, 2012, 11:49:24 AM
+    Author     : p1nga
+    Description:
+        Purpose of the stylesheet follows.
+*/
+table#fb_album {
+    margin: 0 !important;
+}
+
+div.fb_album_div{
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #999;
+}
+
+div.fb_album_div:hover{
+    border:1px solid #444;
+}
+
+td.fb_album_td {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 12px;
+}

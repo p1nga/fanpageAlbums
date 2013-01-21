@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.8
- * @package     com_fanpageAlbums
+ * @package     com_fanpagealbums
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
  * @author      Part-One <pastor399@gmail.com> - http://www.part-one.net
@@ -15,7 +15,7 @@ JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
 // Import CSS
 $document = JFactory::getDocument();
-$document->addStyleSheet('components/com_fanpageAlbums/assets/css/fanpageAlbums.css');
+$document->addStyleSheet('components/com_fanpagealbums/assets/css/fanpagealbums.css');
 ?>
 <script type="text/javascript">
 	Joomla.submitbutton = function(task)
@@ -29,7 +29,7 @@ $document->addStyleSheet('components/com_fanpageAlbums/assets/css/fanpageAlbums.
 	}
 </script>
 
-<form action="<?php echo JRoute::_('index.php?option=com_fanpageAlbums&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="photolinks-form" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_fanpagealbums&layout=edit&id='.(int) $this->item->id); ?>" method="post" name="adminForm" id="photolinks-form" class="form-validate">
 	<div class="width-60 fltlft">
 		<fieldset class="adminform">
 			<legend><?php echo JText::_('COM_FANPAGEALBUMS_LEGEND_PHOTOLINKS'); ?></legend>

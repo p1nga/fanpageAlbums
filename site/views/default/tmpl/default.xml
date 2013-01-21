@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+        <layout title="Facebook Image Gallery">
+                <message>
+                        <![CDATA[Image Gallery Derived From Facebook Fan Page Albums]]>
+                </message>
+        </layout>
+        <fields name="params">
+            <fieldset name="request">
+                <field name="pageid" type="text" default="" size="15" label="Page ID" description="Facebook Fanpage ID"/>
+            </fieldset>
+            <fieldset name="Display" label="Display Options">
+                <field name="columns" type="text" default="4" size="5" label="Columns" description="Number Of Columns To Display"/>
+                <field name="rows" type="text" default="5" size="5" label="Rows" description="Number Of Rows To Display" />
+            </fieldset>
+        </fields>
+</metadata>

@@ -1,7 +1,7 @@
 <?php
 /**
  * @version     1.0.8
- * @package     com_fanpageAlbums
+ * @package     com_fanpagealbums
  * @copyright   Copyright (C) 2013. All rights reserved.
  * @license     GNU LESSER GENERAL PUBLIC LICENSE - Version 3, 29 June 2007
  * @author      Part-One <pastor399@gmail.com> - http://www.part-one.net
@@ -24,7 +24,7 @@ class FanpageAlbumsController extends JController
 	 */
 	public function display($cachable = false, $urlparams = false)
 	{
-		require_once JPATH_COMPONENT.'/helpers/fanpageAlbums.php';
+		require_once JPATH_COMPONENT.'/helpers/fanpagealbums.php';
 
 		$view		= JFactory::getApplication()->input->getCmd('view', 'facebookphotolinks');
         JFactory::getApplication()->input->set('view', $view);
