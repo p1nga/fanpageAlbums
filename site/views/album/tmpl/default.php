@@ -4,9 +4,9 @@ defined('_JEXEC') or die;
 
 $album_view = 'thumb';
 if ($album_view == 'thumb'){
-    require_once('components/com_fanpagealbums/views/album/tmpl/albumThumbs.php');
+    require_once('components/com_fanpagealbums/views/album/tmpl/thumb_album.php');
   } else {
-    require_once('components/com_fanpagealbums/views/album/tmpl/slideGallery.php');    
+    require_once('components/com_fanpagealbums/views/album/tmpl/slide_album.php');    
  }
 
 ?>
